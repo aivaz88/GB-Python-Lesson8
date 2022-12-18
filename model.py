@@ -75,7 +75,8 @@ def import_csv(file_name):
 
 def export_json(file_name):
     file = open(f'{file_name}.json', 'w', encoding='utf-8')
-    json.dump(data_base, file, indent=',')
+    for i in data_base:
+        file.write(json.dumps(i) + '\n')
     file.close()
 
 def export_csv(file_name):
